@@ -3,7 +3,7 @@ import logoSin from '../.././logoSin.png';
 // import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { Row, Col, Nav } from 'react-bootstrap';
-// import { CartWidgetComponent } from '../CartWidgetComponent';
+import { CartWidgetComponent } from '../CartWidget';
 // import { CartContext } from '../../context/CartContext';
 
 export function NavBarComponent() {
@@ -42,6 +42,7 @@ export function NavBarComponent() {
 
         <Col md="2" >
           <Nav className="justify-content-left">
+            <Link to={"/cart"}> <CartWidgetComponent /> {0}</Link>
             {/* <Link to={"/cart"}> <CartWidgetComponent /> {totalItems}</Link> */}
           </Nav>
         </Col>
