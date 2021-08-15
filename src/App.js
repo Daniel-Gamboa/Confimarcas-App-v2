@@ -4,6 +4,7 @@ import '../node_modules/bootstrap/dist/css/bootstrap.css';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { NavBarComponent } from './components/NavBar';
 import { HomeContainer } from './containers/HomeContainer';
+import { ItemListContainer } from './containers/ItemListContainer';
 
 
 function App() {
@@ -14,6 +15,10 @@ function App() {
         <Switch>
             <Route exact path={'/'}>
               <HomeContainer greeting={'¡Conoce nuestras categorias!'} />
+            </Route>
+
+            <Route exact path={'/category/:id'}>
+              <ItemListContainer />
             </Route>
         </Switch>
       </BrowserRouter>

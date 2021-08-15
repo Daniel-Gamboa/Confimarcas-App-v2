@@ -32,7 +32,7 @@ export function HomeContainer({ greeting }) {
             :
             <Spinner animation="border" variant="info" />} */}
             <h4 className="text-center mt-3">{greeting}</h4>
-            
+            <Spinner animation="border" variant="info" />
         </Row>
       </Container>
     </>
