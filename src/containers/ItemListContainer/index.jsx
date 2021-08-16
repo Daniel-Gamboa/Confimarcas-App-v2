@@ -4,7 +4,8 @@ import './style.css';
 // import { CartContext } from "../../context/CartContext";
 // import { getFirestore } from "../../firebase";
 // import { ItemComponent } from "../../components/ItemComponent";
-import { Container, Row, Spinner } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
+import { ItemCount } from '../../components/ItemCount';
 
 export function ItemListContainer() {
 //   const { listadoProductos } = useContext(CartContext)
@@ -46,7 +47,8 @@ export function ItemListContainer() {
                 <Spinner animation="border" variant="info" />
             }
           </div> */}
-          <Spinner animation="border" variant="info" />
+          {/* <Spinner animation="border" variant="info" /> */}
+          <ItemCount cantidadMinima='1' stock='5'/>
         </Row>
       </Container>
     </>
