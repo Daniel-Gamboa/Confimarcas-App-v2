@@ -1,7 +1,7 @@
 // import { useEffect, useState } from "react";
 // import { CategoriesComponent } from "../../components/CategoriesComponent";
 // import { getFirestore } from "../../firebase";
-import { Row, Container, Spinner } from 'react-bootstrap';
+import { Row, Container } from 'react-bootstrap';
 
 export function HomeContainer({ greeting }) {
 //   const [categories, setCategories] = useState();
@@ -32,7 +32,7 @@ export function HomeContainer({ greeting }) {
             :
             <Spinner animation="border" variant="info" />} */}
             <h4 className="text-center mt-3">{greeting}</h4>
-            <Spinner animation="border" variant="info" />
+            {/* <Spinner animation="border" variant="info" /> */}
         </Row>
       </Container>
     </>

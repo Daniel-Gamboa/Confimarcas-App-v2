@@ -1,7 +1,7 @@
 // import logo from './logo.svg';
 import './App.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter} from 'react-router-dom';
 import { NavBarComponent } from './components/NavBar';
 import { HomeContainer } from './containers/HomeContainer';
 import { ItemListContainer } from './containers/ItemListContainer';
@@ -12,15 +12,15 @@ function App() {
     <>
       <BrowserRouter>
         <NavBarComponent/>
-        <Switch>
-            <Route exact path={'/'}>
+        {/* <Switch>
+            <Route exact path={'/'}> */}
               <HomeContainer greeting={'¡Conoce nuestras categorias!'} />
-            </Route>
+            {/* </Route>
 
-            <Route exact path={'/category/:id'}>
+            <Route exact path={'/category/:id'}> */}
               <ItemListContainer />
-            </Route>
-        </Switch>
+            {/* </Route>
+        </Switch> */}
       </BrowserRouter>
     </>
   );
