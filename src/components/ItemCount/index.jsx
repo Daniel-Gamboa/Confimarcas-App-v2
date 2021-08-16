@@ -10,8 +10,8 @@ export const ItemCount = ({cantidadMinima, stock}) => {
     function disminucion() {
         if (contador > cantidadMinima) {
             setContador(contador-1)
-        };
-        if (contador === cantidadMinima){
+        }
+        else {
         alert ('No se puede agregar menos de un producto')
         };
     };
@@ -19,11 +19,11 @@ export const ItemCount = ({cantidadMinima, stock}) => {
     function incremento() {
         if (contador < stock) {
             setContador(contador+1)
-        };
-        if (contador === stock)
+        }
+        else{
         alert ('No tenemos mas unides disponibles de este producto')
+        };
     };
-    
     // const cantidad = contador;
     // setQuantity(cantidad);
 
