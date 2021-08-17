@@ -1,21 +1,86 @@
+
 import './style.css';
 import { useEffect, useState } from "react";
 import { ItemComponent } from "../../components/Item";
 import { Container, Row } from "react-bootstrap";
-import { ItemCount } from '../../components/ItemCount';
+import { ItemCountComponent } from '../../components/ItemCount';
+import { useParams } from 'react-router';
+
+const listaProductos = [{
+  
+    "id": 1,
+    "nombre": "Ballenas Rellenas",
+    "descripcion": "gomas",
+    "categoriaId" : "fiambreras",
+    "precio": 16259,
+    "imagen": "/Imagenes/Fiambreras/BallenasRellenas.PNG",
+    "stock": 100,
+    "cantidadCompra": 0
+  },
+
+  {
+      "id": 2,
+      "nombre": "Bichesitos",
+      "descripcion": "gomas",
+      "categoriaId" : "fiambreras",
+      "precio": 16259,
+      "imagen": "/Imagenes/Fiambreras/Bichesitos.PNG",
+      "stock": 100,
+      "cantidadCompra": 0
+  },
+
+  {
+      "id": 3,
+      "nombre": "Cerebros Rellenos",
+      "descripcion": "gomas",
+      "categoriaId" : "fiambreras",
+      "precio": 16259,
+      "imagen": "/Imagenes/Fiambreras/CerebrosRellenos.PNG",
+      "stock": 100,
+      "cantidadCompra": 0
+    },
+    
+    {
+      "id": 4,
+      "nombre": "Chilitos Rellenos Picantes",
+      "descripcion": "gomas",
+      "categoriaId" : "fiambreras",
+      "precio": 16259,
+      "imagen": "/Imagenes/Fiambreras/ChilitosRellenosPicantes.PNG",
+      "stock": 100,
+"cantidadCompra": 0
+    },
+
+    {
+      "id": 5,
+      "nombre": "Colmillos",
+      "descripcion": "gomas",
+      "categoriaId" : "fiambreras",
+      "precio": 16259,
+      "imagen": "/Imagenes/Fiambreras/Colmillos.PNG",
+      "stock": 100,
+"cantidadCompra": 0
+    },
+];
 
 export function ItemListContainer() {
 const [listProducts, setListProducts] = useState([]);
+const {id} = useParams
 
-  useEffect(() => {
-    async function getDataFromBD () {
-        const response = await fetch('https://api.mercadolibre.com/sites/MLC/search?q=dulces');
-        const data = await response.json();
-        setListProducts(data.results);
-        }
-        getDataFromBD();
-    }, []);
+useEffect(() => {
+  const promesa = new Promise((resolve, reject) => {
+    setTimeout(function () {
+      resolve(listaProductos);
+    }, 2000);
+  });
 
+  promesa.then(data => {
+    setListProducts(data);
+  })
+
+}, [])
+
+console.log(listProducts);
   return (
     <>
       <Container>
@@ -24,13 +89,13 @@ const [listProducts, setListProducts] = useState([]);
           <div className="cards-group">
               {
                   listProducts.map(producto => {
-                      return(
-                    <ItemComponent key={producto.id} img={producto.thumbnail} name={producto.title} sku={producto.SKU} price={producto.price} id={producto.id} />
-                      )
+                    return (
+                      <ItemComponent key={producto.id} nombre={producto.nombre} precio={producto.precio} img={producto.imagen} />
+                    )
                   })
               }
           </div>
-          <ItemCount cantidadMinima='1' stock='5'/>
+          <ItemCountComponent cantidadMinima='1' stock='5'/>
         </Row>
       </Container>
     </>

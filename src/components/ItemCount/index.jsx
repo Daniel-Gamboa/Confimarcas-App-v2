@@ -3,7 +3,7 @@ import { useState } from "react"
 // import { CartContext } from "../../context/CartContext";
 
 
-export const ItemCount = ({cantidadMinima, stock}) => {
+export const ItemCountComponent = ({cantidadMinima, stock}) => {
     // const { setQuantity } = useContext(CartContext)
     const [contador, setContador] = useState(1)
 

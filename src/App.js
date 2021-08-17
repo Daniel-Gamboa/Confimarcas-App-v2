@@ -5,6 +5,7 @@ import { BrowserRouter} from 'react-router-dom';
 import { NavBarComponent } from './components/NavBar';
 import { HomeContainer } from './containers/HomeContainer';
 import { ItemListContainer } from './containers/ItemListContainer';
+// import { ItemDetailContainer } from './containers/ItemDetailContainer';
 
 
 function App() {
@@ -19,8 +20,12 @@ function App() {
 
             <Route exact path={'/category/:id'}> */}
               <ItemListContainer />
-            {/* </Route>
-        </Switch> */}
+             {/* </Route> */}
+
+            {/* <Route exact path={'/item/:id'}>
+              <ItemDetailContainer />
+            </Route> */}
+        {/* </Switch>  */}
       </BrowserRouter>
     </>
   );
